@@ -165,7 +165,7 @@
         const counters = document.querySelectorAll('.counter-animate');
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 1200; // Durasi animasi dalam milidetik (1.2 detik)
+            const duration = 1200; 
 
             let startTime = null;
 
@@ -173,7 +173,6 @@
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
 
-                // Menggunakan rumus easing agar angka melambat di akhir
                 const progressPercentage = Math.min(progress / duration, 1);
                 const currentCount = Math.floor(progressPercentage * target);
 
@@ -182,7 +181,7 @@
                 if (progressPercentage < 1) {
                     requestAnimationFrame(updateCount);
                 } else {
-                    counter.textContent = target; // Memastikan angka akhir pas
+                    counter.textContent = target;
                 }
             }
 

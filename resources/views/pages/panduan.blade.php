@@ -34,7 +34,7 @@
             <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1 transition-colors">3. Verifikasi</h3>
             <p class="text-[11px] text-slate-500 dark:text-gray-500 leading-relaxed transition-colors">Admin memeriksa keaslian dokumen dan kesesuaian poin.</p>
         </div>
-        <!-- Step 4 (Active/Highlight) -->
+        <!-- Step 4  -->
         <div class="bg-white dark:bg-card/40 border border-primary/40 dark:border-primary/30 p-6 rounded-3xl relative z-10 shadow-lg shadow-primary/10 dark:shadow-primary/5 transition-colors duration-300">
             <div class="text-3xl mb-4">✅</div>
             <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1 transition-colors">4. Approved</h3>
@@ -169,7 +169,6 @@
             }
         });
 
-        // Buka otomatis semua kategori saat mencari agar item yang match terlihat
         if (input.length > 0) {
             categories.forEach(cat => {
                 const content = cat.querySelector('div[id^="content-"]');

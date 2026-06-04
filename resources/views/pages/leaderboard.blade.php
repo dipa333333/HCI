@@ -70,7 +70,7 @@
         <p class="text-primary font-bold mt-2 md:mt-3 text-xs md:text-xl">145 <span class="text-[7px] md:text-xs font-normal text-slate-400 dark:text-gray-500 transition-colors">pts</span></p>
     </div>
 
-    <!-- Rank 1 (Mulyono) -->
+    <!-- Rank 1 -->
     <div class="bg-white dark:bg-primary/10 border-2 border-primary/20 dark:border-primary/40 p-3 md:p-10 rounded-2xl md:rounded-[40px] text-center order-2 scale-110 md:scale-105 shadow-xl dark:shadow-2xl shadow-primary/10 dark:shadow-primary/20 relative group hover:-translate-y-3 transition-all duration-500 z-10 flex flex-col justify-end">
         <div class="absolute -top-3 md:-top-6 left-1/2 -translate-x-1/2 bg-primary text-white text-[6px] md:text-[10px] font-black px-2 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg tracking-widest">1ST</div>
         <div class="w-12 h-12 md:w-24 md:h-24 bg-yellow-50 dark:bg-yellow-500/20 rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center border-2 md:border-4 border-yellow-400 dark:border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.2)] dark:shadow-[0_0_20px_rgba(234,179,8,0.3)] animate-pulse transition-colors mt-3 md:mt-0">
@@ -93,9 +93,8 @@
     </div>
 </div>
 
-<!-- LEADERBOARD TABLE (FIXED SCROLL) -->
+<!-- LEADERBOARD TABLE -->
 <div class="bg-white dark:bg-card/80 backdrop-blur-md border border-slate-200 dark:border-white/5 rounded-3xl overflow-hidden shadow-sm dark:shadow-xl mb-12 transition-colors duration-300">
-    <!-- Header Tabel Tetap -->
     <div class="px-6 py-4 border-b border-slate-100 dark:border-white/5 bg-slate-50 dark:bg-white/5 sticky top-0 z-10 transition-colors">
         <h3 class="text-sm font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest flex justify-between transition-colors">
             <span>Top 50 Klasemen Mahasiswa</span>
@@ -107,7 +106,6 @@
     <div class="max-h-[500px] overflow-y-auto custom-scrollbar">
         <table class="w-full text-left">
             <tbody id="leaderboard-body" class="divide-y divide-slate-100 dark:divide-white/5 transition-colors">
-                <!-- Loader Placeholder sebelum JS jalan -->
                 <tr>
                     <td colspan="3" class="px-6 py-10 text-center text-slate-500 dark:text-gray-500">
                         Memuat data peringkat...
@@ -118,7 +116,7 @@
     </div>
 </div>
 
-<!-- STYLING KHUSUS UNTUK CUSTOM SCROLLBAR -->
+<!-- STYLING -->
 <style>
     .custom-scrollbar::-webkit-scrollbar {
         width: 6px;
@@ -135,7 +133,7 @@
     }
 </style>
 
-<!-- JAVASCRIPT UNTUK GENERATE 50 DATA JSON DUMMY -->
+<!-- JAVASCRIPT 50 DATA JSON DUMMY -->
 <script>
     const generateTop50Data = () => {
         const firstNames = ["Komang", "Putu", "Wayan", "Made", "Nyoman", "Ketut", "Gede", "Ayu", "Kadek", "Luh", "Agus", "Bagus", "Dwi", "Tri", "Sari"];
@@ -172,7 +170,6 @@
         let htmlContent = '';
 
         data.forEach(item => {
-            // Perhatikan penggunaan dark: classes di dalam template string ini
             htmlContent += `
                 <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-300">
                     <td class="px-6 py-4 text-slate-400 dark:text-gray-400 font-black italic w-16 transition-colors">${item.rank}</td>

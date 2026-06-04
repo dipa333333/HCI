@@ -2,7 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Halaman pertama yang dibuka adalah Splash Screen
 Route::get('/', function () {
+    return view('pages.splash');
+});
+
+// Halaman Dashboard utama dialihkan ke rute /dashboard
+Route::get('/dashboard', function () {
     return view('pages.dashboard');
 });
 

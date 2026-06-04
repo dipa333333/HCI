@@ -32,7 +32,6 @@
 
 <!-- GRID EVENT CARDS -->
 <div id="eventGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Diisi oleh JavaScript -->
 </div>
 
 <!-- MODAL DETAIL EVENT -->
@@ -43,7 +42,6 @@
         <!-- Modal Banner Image -->
         <div class="h-56 relative bg-slate-200 dark:bg-gray-900">
             <img id="modalImage" src="" alt="Event Banner" class="absolute inset-0 w-full h-full object-cover">
-            <!-- Overlay gradien agar teks close dan transisi mulus -->
             <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-card via-black/10 to-black/50"></div>
             <button onclick="closeEventModal()" class="absolute top-4 right-4 z-10 bg-black/40 hover:bg-red-500 text-white p-2 rounded-full backdrop-blur-md transition">✕</button>
         </div>
@@ -169,13 +167,11 @@
 
     function filterEvent(category) {
         currentFilter = category;
-        // Reset semua tombol ke style default (Inactive)
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.classList.remove('active', 'bg-primary', 'text-white', 'border-transparent');
             btn.classList.add('bg-white', 'dark:bg-card', 'text-slate-500', 'dark:text-gray-400', 'border-slate-200', 'dark:border-white/5');
         });
 
-        // Aktifkan tombol yang di-klik
         const activeBtn = document.getElementById(`filter-${category}`);
         activeBtn.classList.add('active', 'bg-primary', 'text-white', 'border-transparent');
         activeBtn.classList.remove('bg-white', 'dark:bg-card', 'text-slate-500', 'dark:text-gray-400', 'border-slate-200', 'dark:border-white/5');
@@ -208,7 +204,6 @@
         setTimeout(() => { document.getElementById('eventModal').classList.add('hidden'); }, 300);
     }
 
-    // Initial Load
     document.addEventListener('DOMContentLoaded', renderEvents);
 </script>
 @endsection

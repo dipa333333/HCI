@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class', // darkmode
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: { primary: '#6366F1', dark: '#0F172A', card: '#1E293B' }
@@ -57,7 +57,7 @@
         </div>
 
         <nav class="space-y-2 text-sm flex-1">
-            <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('/') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Dashboard</a>
+            <a href="/dashboard" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('/') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Dashboard</a>
             <a href="/skp" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('skp') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">SKP Saya</a>
             <a href="/event" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('event') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Katalog Event</a>
             <a href="/leaderboard" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('leaderboard') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Peringkat</a>
@@ -75,7 +75,7 @@
         </div>
     </aside>
 
-    <!-- HEADER MOBILE (Baru: Menampung Logo & Tombol Mode) -->
+    <!-- HEADER MOBILE -->
     <div class="lg:hidden sticky top-0 z-40 bg-white/80 dark:bg-card/80 backdrop-blur-md border-b border-slate-200 dark:border-gray-700 px-5 py-3 flex justify-between items-center transition-colors duration-300">
         <div class="flex items-center gap-3">
             <img src="{{ asset('images/logo_instiki.png') }}" alt="Logo" class="w-8 h-8 object-cover rounded-lg shadow-sm">
@@ -96,13 +96,12 @@
         </div>
     </main>
 
-    <!-- BOTTOM NAVIGATION (Baru: Ditambahkan Menu Event & Icon) -->
+    <!-- BOTTOM NAVIGATION -->
     <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-card border-t border-slate-200 dark:border-gray-700 z-40 transition-colors duration-300">
-        <!-- Mengubah px-6 menjadi px-4 agar 5 menu muat dengan pas -->
         <div class="flex justify-between items-center px-4 py-2 pb-safe text-[10px] font-semibold">
 
             <!-- Menu 1: Home -->
-            <a href="/" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('/') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+            <a href="/dashboard" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('/') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
                 <div class="{{ request()->is('/') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -129,7 +128,6 @@
             <!-- Menu 3: Event -->
             <a href="/event" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('event') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
                 <div class="{{ request()->is('event') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
-                    <!-- Menggunakan Icon Kalender untuk melambangkan Event -->
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                         <line x1="16" y1="2" x2="16" y2="6"/>
@@ -168,18 +166,15 @@
         </div>
     </div>
 
-    <!-- Menambahkan utility iOS Safe Area Bottom Nav -->
     <style>
         .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
     </style>
 
     <script>
-        // DARK MODE LOGIC (Diperbarui agar mendukung 2 tombol sekaligus: Desktop & Mobile Header)
         function toggleDarkMode() {
             const html = document.documentElement;
             const isDark = html.classList.toggle('dark');
 
-            // Kita gunakan querySelectorAll untuk memilih icon sun dan moon di semua tempat (sidebar & header)
             const sunIcons = document.querySelectorAll('.icon-sun');
             const moonIcons = document.querySelectorAll('.icon-moon');
 
@@ -194,7 +189,6 @@
             }
         }
 
-        // Cek preferensi saat halaman dimuat
         window.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme');
             const sunIcons = document.querySelectorAll('.icon-sun');

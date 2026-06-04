@@ -45,7 +45,6 @@
 
 <!-- LIST CONTAINER -->
 <div id="skpList" class="space-y-4 min-h-[400px]">
-    <!-- Data akan di-render oleh JavaScript -->
 </div>
 
 <!-- PAGINATION CONTROLS -->
@@ -129,7 +128,6 @@
             listContainer.innerHTML = `<div class="text-center py-10 text-slate-500 dark:text-gray-500">Data tidak ditemukan</div>`;
         } else {
             paginatedItems.forEach(item => {
-                // Konfigurasi warna status agar cocok di mode terang dan gelap
                 const statusColors = {
                     pending: 'text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-400/10 border-yellow-200 dark:border-yellow-400/20',
                     approved: 'text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-400/10 border-emerald-200 dark:border-emerald-400/20',
