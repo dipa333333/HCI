@@ -57,7 +57,7 @@
         </div>
 
         <nav class="space-y-2 text-sm flex-1">
-            <a href="/dashboard" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('/') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Dashboard</a>
+            <a href="/dashboard" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('dashboard') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Dashboard</a>
             <a href="/skp" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('skp') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">SKP Saya</a>
             <a href="/event" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('event') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Katalog Event</a>
             <a href="/leaderboard" class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->is('leaderboard') ? 'bg-primary/10 text-primary font-medium border border-primary/20' : 'text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800/50 transition' }}">Peringkat</a>
@@ -97,23 +97,21 @@
     </main>
 
     <!-- BOTTOM NAVIGATION -->
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-card border-t border-slate-200 dark:border-gray-700 z-40 transition-colors duration-300">
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-card border-t border-slate-200 dark:border-gray-700 z-40">
         <div class="flex justify-between items-center px-4 py-2 pb-safe text-[10px] font-semibold">
 
-            <!-- Menu 1: Home -->
-            <a href="/dashboard" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('/') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
-                <div class="{{ request()->is('/') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+            <a href="/dashboard" class="flex flex-col items-center gap-1 p-2 transition-all duration-500 relative {{ request()->is('dashboard') ? 'text-primary -translate-y-3' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="transition-all duration-500 {{ request()->is('dashboard') ? 'bg-primary text-white p-3 rounded-full shadow-lg shadow-primary/40 scale-110' : 'p-1.5' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                         <polyline points="9 22 9 12 15 12 15 22"/>
                     </svg>
                 </div>
-                <span>Home</span>
+                <span class="{{ request()->is('dashboard') ? 'font-bold' : '' }}">Home</span>
             </a>
 
-            <!-- Menu 2: SKP -->
-            <a href="/skp" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('skp') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
-                <div class="{{ request()->is('skp') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+            <a href="/skp" class="flex flex-col items-center gap-1 p-2 transition-all duration-500 relative {{ request()->is('skp') ? 'text-primary -translate-y-3' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="transition-all duration-500 {{ request()->is('skp') ? 'bg-primary text-white p-3 rounded-full shadow-lg shadow-primary/40 scale-110' : 'p-1.5' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                         <polyline points="14 2 14 8 20 8"/>
@@ -122,12 +120,11 @@
                         <polyline points="10 9 9 9 8 9"/>
                     </svg>
                 </div>
-                <span>SKP</span>
+                <span class="{{ request()->is('skp') ? 'font-bold' : '' }}">SKP</span>
             </a>
 
-            <!-- Menu 3: Event -->
-            <a href="/event" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('event') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
-                <div class="{{ request()->is('event') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+            <a href="/event" class="flex flex-col items-center gap-1 p-2 transition-all duration-500 relative {{ request()->is('event') ? 'text-primary -translate-y-3' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="transition-all duration-500 {{ request()->is('event') ? 'bg-primary text-white p-3 rounded-full shadow-lg shadow-primary/40 scale-110' : 'p-1.5' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                         <line x1="16" y1="2" x2="16" y2="6"/>
@@ -135,12 +132,11 @@
                         <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                 </div>
-                <span>Event</span>
+                <span class="{{ request()->is('event') ? 'font-bold' : '' }}">Event</span>
             </a>
 
-            <!-- Menu 4: Rank -->
-            <a href="/leaderboard" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('leaderboard') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
-                <div class="{{ request()->is('leaderboard') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+            <a href="/leaderboard" class="flex flex-col items-center gap-1 p-2 transition-all duration-500 relative {{ request()->is('leaderboard') ? 'text-primary -translate-y-3' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="transition-all duration-500 {{ request()->is('leaderboard') ? 'bg-primary text-white p-3 rounded-full shadow-lg shadow-primary/40 scale-110' : 'p-1.5' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M2 20h20"/>
                         <path d="M5 20v-5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5"/>
@@ -148,19 +144,18 @@
                         <path d="M17 20v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2v4"/>
                     </svg>
                 </div>
-                <span>Rank</span>
+                <span class="{{ request()->is('leaderboard') ? 'font-bold' : '' }}">Rank</span>
             </a>
 
-            <!-- Menu 5: Info -->
-            <a href="/panduan" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('panduan') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
-                <div class="{{ request()->is('panduan') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+            <a href="/panduan" class="flex flex-col items-center gap-1 p-2 transition-all duration-500 relative {{ request()->is('panduan') ? 'text-primary -translate-y-3' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="transition-all duration-500 {{ request()->is('panduan') ? 'bg-primary text-white p-3 rounded-full shadow-lg shadow-primary/40 scale-110' : 'p-1.5' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M12 16v-4"/>
                         <path d="M12 8h.01"/>
                     </svg>
                 </div>
-                <span>Info</span>
+                <span class="{{ request()->is('panduan') ? 'font-bold' : '' }}">Info</span>
             </a>
 
         </div>
