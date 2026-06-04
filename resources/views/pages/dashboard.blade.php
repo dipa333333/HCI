@@ -26,13 +26,13 @@
             <div class="relative z-10">
                 <p class="text-slate-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wider">Total Progres SKP</p>
                 <div class="flex items-baseline gap-2 mt-2">
-                    <h2 class="text-5xl font-extrabold text-slate-900 dark:text-white">75</h2>
+                    <h2 class="counter-animate text-5xl font-extrabold text-slate-900 dark:text-white" data-target="75">0</h2>
                     <span class="text-slate-400 dark:text-gray-500 font-medium">/ 100 Poin</span>
                 </div>
 
                 <div class="mt-6">
                     <div class="w-full h-4 bg-slate-100 dark:bg-dark/50 rounded-full border border-slate-200 dark:border-white/5 p-1">
-                        <div class="h-full bg-gradient-to-r from-primary to-indigo-400 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(99,102,241,0.3)]" style="width:75%"></div>
+                        <div class="progress-bar-animate h-full bg-gradient-to-r from-primary to-indigo-400 rounded-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(99,102,241,0.3)]" style="width: 0%" data-width="75%"></div>
                     </div>
                 </div>
                 <p class="text-xs text-slate-500 dark:text-gray-400 mt-4 flex items-center gap-2">
@@ -46,31 +46,39 @@
             <div class="bg-white dark:bg-card/60 border border-slate-200 dark:border-white/5 p-5 rounded-2xl transition-colors">
                 <p class="text-xs text-slate-500 dark:text-gray-400 mb-2">Akademik</p>
                 <div class="flex justify-between items-end">
-                    <span class="text-xl font-bold text-slate-900 dark:text-white">30<span class="text-xs text-slate-400 dark:text-gray-500">/40</span></span>
+                    <span class="text-xl font-bold text-slate-900 dark:text-white">
+                        <span class="counter-animate" data-target="30">0</span><span class="text-xs text-slate-400 dark:text-gray-500">/40</span>
+                    </span>
                     <span class="text-[10px] text-emerald-500 font-medium">75%</span>
                 </div>
                 <div class="w-full h-1 bg-slate-100 dark:bg-dark mt-2 rounded-full overflow-hidden">
-                    <div class="h-full bg-indigo-500" style="width: 75%"></div>
+                    <div class="progress-bar-animate h-full bg-indigo-500 transition-all duration-1000 ease-out" style="width: 0%" data-width="75%"></div>
                 </div>
             </div>
+
             <div class="bg-white dark:bg-card/60 border border-slate-200 dark:border-white/5 p-5 rounded-2xl transition-colors">
                 <p class="text-xs text-slate-500 dark:text-gray-400 mb-2">Organisasi</p>
                 <div class="flex justify-between items-end">
-                    <span class="text-xl font-bold text-slate-900 dark:text-white">20<span class="text-xs text-slate-400 dark:text-gray-500">/30</span></span>
+                    <span class="text-xl font-bold text-slate-900 dark:text-white">
+                        <span class="counter-animate" data-target="20">0</span><span class="text-xs text-slate-400 dark:text-gray-500">/30</span>
+                    </span>
                     <span class="text-[10px] text-emerald-500 font-medium">66%</span>
                 </div>
                 <div class="w-full h-1 bg-slate-100 dark:bg-dark mt-2 rounded-full overflow-hidden">
-                    <div class="h-full bg-indigo-500" style="width: 66%"></div>
+                    <div class="progress-bar-animate h-full bg-indigo-500 transition-all duration-1000 ease-out" style="width: 0%" data-width="66%"></div>
                 </div>
             </div>
+
             <div class="bg-white dark:bg-card/60 border border-slate-200 dark:border-white/5 p-5 rounded-2xl transition-colors">
                 <p class="text-xs text-slate-500 dark:text-gray-400 mb-2">Minat Bakat</p>
                 <div class="flex justify-between items-end">
-                    <span class="text-xl font-bold text-slate-900 dark:text-white">25<span class="text-xs text-slate-400 dark:text-gray-500">/30</span></span>
+                    <span class="text-xl font-bold text-slate-900 dark:text-white">
+                        <span class="counter-animate" data-target="25">0</span><span class="text-xs text-slate-400 dark:text-gray-500">/30</span>
+                    </span>
                     <span class="text-[10px] text-emerald-500 font-medium">83%</span>
                 </div>
                 <div class="w-full h-1 bg-slate-100 dark:bg-dark mt-2 rounded-full overflow-hidden">
-                    <div class="h-full bg-indigo-500" style="width: 83%"></div>
+                    <div class="progress-bar-animate h-full bg-indigo-500 transition-all duration-1000 ease-out" style="width: 0%" data-width="83%"></div>
                 </div>
             </div>
         </div>
@@ -83,7 +91,7 @@
             <div class="space-y-4">
                 <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-gray-700/30">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-yellow-500/10 rounded-xl flex items-center justify-center text-yellow-500 text-lg">🎓</div>
+                        <div class="w-10 h-10 bg-yellow-500/10 rounded-xl flex items-center justify-center text-yellow-500 text-lg">📝</div>
                         <div>
                             <p class="font-medium text-sm text-slate-800 dark:text-white">Seminar Nasional IT</p>
                             <p class="text-[10px] text-slate-400 dark:text-gray-500 uppercase tracking-tighter">12 Mei 2026 • Akademik</p>
@@ -93,7 +101,7 @@
                 </div>
                 <div class="flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 text-lg">💻</div>
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 text-lg">📄</div>
                         <div>
                             <p class="font-medium text-sm text-slate-800 dark:text-white">Workshop Laravel Dasar</p>
                             <p class="text-[10px] text-slate-400 dark:text-gray-500 uppercase tracking-tighter">10 Mei 2026 • Akademik</p>
@@ -103,9 +111,32 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="space-y-8">
+    </div> <div class="space-y-8">
+
+        <div class="bg-white dark:bg-card/80 backdrop-blur-md border border-slate-200 dark:border-white/5 p-5 md:p-6 rounded-3xl shadow-sm dark:shadow-none transition-colors">
+            <h3 class="text-sm font-semibold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Status Mahasiswa
+            </h3>
+
+            <div class="grid grid-cols-3 gap-2 md:gap-4">
+                <div class="p-2 md:p-3 bg-slate-50 dark:bg-dark/40 rounded-xl border border-slate-100 dark:border-white/5 flex flex-col justify-center items-center text-center">
+                    <p class="text-[8px] md:text-[10px] text-slate-400 dark:text-gray-500 uppercase tracking-wider mb-1">IPK</p>
+                    <p class="text-sm md:text-lg font-bold text-slate-900 dark:text-white">3.61</p>
+                </div>
+
+                <div class="p-2 md:p-3 bg-slate-50 dark:bg-dark/40 rounded-xl border border-slate-100 dark:border-white/5 flex flex-col justify-center items-center text-center">
+                    <p class="text-[8px] md:text-[10px] text-slate-400 dark:text-gray-500 uppercase tracking-wider mb-1">Status</p>
+                    <p class="text-[9px] md:text-sm font-bold text-emerald-500 leading-tight">Hampir<br>Tercapai</p>
+                </div>
+
+                <div class="p-2 md:p-3 bg-slate-50 dark:bg-dark/40 rounded-xl border border-slate-100 dark:border-white/5 flex flex-col justify-center items-center text-center">
+                    <p class="text-[8px] md:text-[10px] text-slate-400 dark:text-gray-500 uppercase tracking-wider mb-1">Target</p>
+                    <p class="text-sm md:text-lg font-bold text-slate-900 dark:text-white">30 <span class="text-[8px] md:text-[10px] font-normal">Pts</span></p>
+                </div>
+            </div>
+        </div>
 
         <div class="bg-gradient-to-br from-indigo-600 to-primary p-6 rounded-3xl shadow-xl shadow-primary/20 relative overflow-hidden group">
             <div class="relative z-10">
@@ -118,26 +149,45 @@
             <svg class="absolute -bottom-2 -right-2 w-20 h-20 text-white/20 transform rotate-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
         </div>
 
-        <div class="bg-white dark:bg-card/80 backdrop-blur-md border border-slate-200 dark:border-white/5 p-6 rounded-3xl shadow-sm dark:shadow-none transition-colors">
-            <h3 class="text-sm font-semibold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Status Mahasiswa
-            </h3>
-            <div class="space-y-4">
-                <div class="p-3 bg-slate-50 dark:bg-dark/40 rounded-xl border border-slate-100 dark:border-white/5">
-                    <p class="text-[10px] text-slate-400 dark:text-gray-500 uppercase">IPK Terakhir</p>
-                    <p class="text-lg font-bold text-slate-900 dark:text-white">3.61</p>
-                </div>
-                <div class="p-3 bg-slate-50 dark:bg-dark/40 rounded-xl border border-slate-100 dark:border-white/5">
-                    <p class="text-[10px] text-slate-400 dark:text-gray-500 uppercase">Status SKP</p>
-                    <p class="text-sm font-bold text-emerald-500">Hampir Tercapai</p>
-                </div>
-                <div class="p-3 bg-slate-50 dark:bg-dark/40 rounded-xl border border-slate-100 dark:border-white/5">
-                    <p class="text-[10px] text-slate-400 dark:text-gray-500 uppercase">Target Semester</p>
-                    <p class="text-sm font-bold text-slate-900 dark:text-white">30 Poin</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </div> </div> <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // 1. Animasi Progress Bar
+        setTimeout(() => {
+            const progressBars = document.querySelectorAll('.progress-bar-animate');
+            progressBars.forEach(bar => {
+                const targetWidth = bar.getAttribute('data-width');
+                bar.style.width = targetWidth;
+            });
+        }, 100);
+
+        // 2. Animasi Count Up Angka
+        const counters = document.querySelectorAll('.counter-animate');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 1200; // Durasi animasi dalam milidetik (1.2 detik)
+
+            let startTime = null;
+
+            function updateCount(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+
+                // Menggunakan rumus easing agar angka melambat di akhir
+                const progressPercentage = Math.min(progress / duration, 1);
+                const currentCount = Math.floor(progressPercentage * target);
+
+                counter.textContent = currentCount;
+
+                if (progressPercentage < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.textContent = target; // Memastikan angka akhir pas
+                }
+            }
+
+            requestAnimationFrame(updateCount);
+        });
+    });
+</script>
 @endsection

@@ -106,7 +106,7 @@
             id: 4, title: "Lomba Esai Teknologi Tepat Guna", category: "kompetisi", tag: "Kompetisi",
             points: 30, date: "10 Agustus 2026", location: "Gedung Rektorat", quota: "20/100",
             deadline: "30 hari lagi",
-            image: "https://images.unsplash.com/photo-1455390582262-044cdead27d8?q=80&w=800&auto=format&fit=crop",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmc9G7OfR8ZJUaCCGhDFa0ymakfIlu1oYIeg&s",
             desc: "Tuangkan ide inovatifmu dalam bentuk tulisan mengenai pemanfaatan teknologi untuk masalah sehari-hari."
         },
         {

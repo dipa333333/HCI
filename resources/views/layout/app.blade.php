@@ -18,6 +18,7 @@
 </head>
 <body class="bg-slate-50 dark:bg-dark text-slate-900 dark:text-gray-200 min-h-screen flex flex-col lg:flex-row transition-colors duration-300">
 
+    <!-- MODAL TAMBAH SKP -->
     <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center">
         <div onclick="closeModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition duration-300" id="modalOverlay"></div>
         <div id="modalBox" class="relative bg-white dark:bg-card w-full max-w-md mx-4 p-6 rounded-2xl shadow-2xl transform scale-95 opacity-0 transition duration-300 border border-black/5 dark:border-white/5">
@@ -34,10 +35,12 @@
         </div>
     </div>
 
-    <div id="toast" class="fixed top-5 right-5 bg-emerald-500 px-5 py-3 rounded-xl shadow-lg text-white hidden opacity-0 transition-all duration-300 z-50 flex items-center gap-3 border border-emerald-400/50">
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed top-5 right-5 bg-emerald-500 px-5 py-3 rounded-xl shadow-lg text-white hidden opacity-0 transition-all duration-300 z-[60] flex items-center gap-3 border border-emerald-400/50">
         <span id="toastMessage" class="font-medium"></span>
     </div>
 
+    <!-- SIDEBAR DESKTOP -->
     <aside class="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-white dark:bg-card border-r border-slate-200 dark:border-gray-700 p-6 shrink-0 transition-colors duration-300">
         <div class="flex items-center justify-between mb-10">
             <div class="flex items-center gap-3">
@@ -46,9 +49,9 @@
             </div>
 
             <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-slate-100 dark:bg-dark text-slate-500 dark:text-yellow-400 hover:scale-110 transition active:scale-95">
-                <svg id="theme-icon-desktop" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="icon-sun" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
-                    <path id="icon-moon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path class="icon-sun hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    <path class="icon-moon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
             </button>
         </div>
@@ -72,39 +75,121 @@
         </div>
     </aside>
 
+    <!-- HEADER MOBILE (Baru: Menampung Logo & Tombol Mode) -->
+    <div class="lg:hidden sticky top-0 z-40 bg-white/80 dark:bg-card/80 backdrop-blur-md border-b border-slate-200 dark:border-gray-700 px-5 py-3 flex justify-between items-center transition-colors duration-300">
+        <div class="flex items-center gap-3">
+            <img src="{{ asset('images/logo_instiki.png') }}" alt="Logo" class="w-8 h-8 object-cover rounded-lg shadow-sm">
+            <h1 class="text-lg font-bold text-slate-900 dark:text-white tracking-wide">Instiki Point</h1>
+        </div>
+        <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-dark border border-slate-200 dark:border-white/5 text-slate-500 dark:text-yellow-400 hover:scale-110 transition active:scale-95 shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path class="icon-sun hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                <path class="icon-moon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- AREA KONTEN UTAMA -->
     <main class="flex-1 pb-24 lg:pb-0 min-w-0">
         <div class="max-w-7xl mx-auto px-4 md:px-8 py-8">
             @yield('content')
         </div>
     </main>
 
+    <!-- BOTTOM NAVIGATION (Baru: Ditambahkan Menu Event & Icon) -->
     <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-card border-t border-slate-200 dark:border-gray-700 z-40 transition-colors duration-300">
-        <div class="flex justify-around py-3 px-1 text-[10px] font-medium">
-            <a href="/" class="flex flex-col items-center gap-1 {{ request()->is('/') ? 'text-primary' : 'text-slate-400 dark:text-gray-500' }}">Home</a>
-            <a href="/skp" class="flex flex-col items-center gap-1 {{ request()->is('skp') ? 'text-primary' : 'text-slate-400 dark:text-gray-500' }}">SKP</a>
-            <button onclick="toggleDarkMode()" class="flex flex-col items-center gap-1 text-slate-400 dark:text-yellow-400">
-                <span id="theme-text-mobile">Mode</span>
-            </button>
-            <a href="/leaderboard" class="flex flex-col items-center gap-1 {{ request()->is('leaderboard') ? 'text-primary' : 'text-slate-400 dark:text-gray-500' }}">Rank</a>
-            <a href="/panduan" class="flex flex-col items-center gap-1 {{ request()->is('panduan') ? 'text-primary' : 'text-slate-400 dark:text-gray-500' }}">Info</a>
+        <!-- Mengubah px-6 menjadi px-4 agar 5 menu muat dengan pas -->
+        <div class="flex justify-between items-center px-4 py-2 pb-safe text-[10px] font-semibold">
+
+            <!-- Menu 1: Home -->
+            <a href="/" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('/') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="{{ request()->is('/') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <span>Home</span>
+            </a>
+
+            <!-- Menu 2: SKP -->
+            <a href="/skp" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('skp') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="{{ request()->is('skp') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <span>SKP</span>
+            </a>
+
+            <!-- Menu 3: Event -->
+            <a href="/event" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('event') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="{{ request()->is('event') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+                    <!-- Menggunakan Icon Kalender untuk melambangkan Event -->
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <span>Event</span>
+            </a>
+
+            <!-- Menu 4: Rank -->
+            <a href="/leaderboard" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('leaderboard') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="{{ request()->is('leaderboard') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 20h20"/>
+                        <path d="M5 20v-5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5"/>
+                        <path d="M11 20v-9a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2v9"/>
+                        <path d="M17 20v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2v4"/>
+                    </svg>
+                </div>
+                <span>Rank</span>
+            </a>
+
+            <!-- Menu 5: Info -->
+            <a href="/panduan" class="flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 {{ request()->is('panduan') ? 'text-primary' : 'text-slate-400 dark:text-gray-500 hover:text-slate-900 dark:hover:text-gray-300' }}">
+                <div class="{{ request()->is('panduan') ? 'bg-primary/10 p-1.5 rounded-xl' : 'p-1.5' }}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                </div>
+                <span>Info</span>
+            </a>
+
         </div>
     </div>
 
+    <!-- Menambahkan utility iOS Safe Area Bottom Nav -->
+    <style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+
     <script>
-        // DARK MODE LOGIC
+        // DARK MODE LOGIC (Diperbarui agar mendukung 2 tombol sekaligus: Desktop & Mobile Header)
         function toggleDarkMode() {
             const html = document.documentElement;
-            const sunIcon = document.getElementById('icon-sun');
-            const moonIcon = document.getElementById('icon-moon');
             const isDark = html.classList.toggle('dark');
 
+            // Kita gunakan querySelectorAll untuk memilih icon sun dan moon di semua tempat (sidebar & header)
+            const sunIcons = document.querySelectorAll('.icon-sun');
+            const moonIcons = document.querySelectorAll('.icon-moon');
+
             if (isDark) {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
+                sunIcons.forEach(icon => icon.classList.add('hidden'));
+                moonIcons.forEach(icon => icon.classList.remove('hidden'));
                 localStorage.setItem('theme', 'dark');
             } else {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
+                sunIcons.forEach(icon => icon.classList.remove('hidden'));
+                moonIcons.forEach(icon => icon.classList.add('hidden'));
                 localStorage.setItem('theme', 'light');
             }
         }
@@ -112,18 +197,21 @@
         // Cek preferensi saat halaman dimuat
         window.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme');
+            const sunIcons = document.querySelectorAll('.icon-sun');
+            const moonIcons = document.querySelectorAll('.icon-moon');
+
             if (savedTheme === 'light') {
                 document.documentElement.classList.remove('dark');
-                document.getElementById('icon-sun').classList.remove('hidden');
-                document.getElementById('icon-moon').classList.add('hidden');
+                sunIcons.forEach(icon => icon.classList.remove('hidden'));
+                moonIcons.forEach(icon => icon.classList.add('hidden'));
             } else {
                 document.documentElement.classList.add('dark');
-                document.getElementById('icon-sun').classList.add('hidden');
-                document.getElementById('icon-moon').classList.remove('hidden');
+                sunIcons.forEach(icon => icon.classList.add('hidden'));
+                moonIcons.forEach(icon => icon.classList.remove('hidden'));
             }
         });
 
-        // MODAL LOGIC
+        // MODAL & TOAST LOGIC
         function openModal() {
             const modal = document.getElementById('modal');
             const overlay = document.getElementById('modalOverlay');

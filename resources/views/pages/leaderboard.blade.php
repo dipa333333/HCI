@@ -58,38 +58,38 @@
 </div>
 
 <!-- TOP 3 PODIUM -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 items-end">
+<div class="grid grid-cols-3 gap-2 md:gap-6 mb-12 items-end">
     <!-- Rank 2 -->
-    <div class="bg-white dark:bg-card/40 border border-slate-200 dark:border-white/5 p-6 rounded-3xl text-center order-2 md:order-1 relative group hover:-translate-y-2 transition-all duration-500 shadow-sm dark:shadow-none">
-        <div class="absolute top-4 left-4 text-slate-400 dark:text-gray-500 font-black text-xl italic">2</div>
-        <div class="w-16 h-16 bg-slate-50 dark:bg-gray-500/20 rounded-full mx-auto mb-4 flex items-center justify-center border-2 border-slate-200 dark:border-gray-400/50 shadow-sm dark:shadow-lg transition-colors">
-            <span class="text-2xl">🥈</span>
+    <div class="bg-white dark:bg-card/40 border border-slate-200 dark:border-white/5 p-2 md:p-6 rounded-2xl md:rounded-3xl text-center order-1 relative group hover:-translate-y-2 transition-all duration-500 shadow-sm dark:shadow-none flex flex-col justify-end">
+        <div class="absolute top-2 left-2 md:top-4 md:left-4 text-slate-400 dark:text-gray-500 font-black text-xs md:text-xl italic">2</div>
+        <div class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 dark:bg-gray-500/20 rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center border-2 border-slate-200 dark:border-gray-400/50 shadow-sm md:shadow-lg transition-colors mt-4 md:mt-0">
+            <span class="text-base md:text-2xl">🥈</span>
         </div>
-        <h3 class="font-bold text-slate-900 dark:text-white transition-colors">Budi Santoso</h3>
-        <p class="text-xs text-slate-500 dark:text-gray-500 mt-1 transition-colors">Sistem Informasi</p>
-        <p class="text-primary font-bold mt-3 text-xl">145 <span class="text-xs font-normal text-slate-400 dark:text-gray-500 transition-colors">pts</span></p>
+        <h3 class="font-bold text-slate-900 dark:text-white text-[9px] md:text-base truncate transition-colors">Budi Santoso</h3>
+        <p class="text-[7px] md:text-xs text-slate-500 dark:text-gray-500 mt-0.5 md:mt-1 truncate transition-colors">Sistem Informasi</p>
+        <p class="text-primary font-bold mt-2 md:mt-3 text-xs md:text-xl">145 <span class="text-[7px] md:text-xs font-normal text-slate-400 dark:text-gray-500 transition-colors">pts</span></p>
     </div>
 
     <!-- Rank 1 (Mulyono) -->
-    <div class="bg-white dark:bg-primary/10 border-2 border-primary/20 dark:border-primary/40 p-10 rounded-[40px] text-center order-1 md:order-2 scale-105 shadow-xl dark:shadow-2xl shadow-primary/10 dark:shadow-primary/20 relative group hover:-translate-y-3 transition-all duration-500">
-        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black px-4 py-1.5 rounded-full shadow-lg tracking-widest">CHAMPION</div>
-        <div class="w-24 h-24 bg-yellow-50 dark:bg-yellow-500/20 rounded-full mx-auto mb-4 flex items-center justify-center border-4 border-yellow-400 dark:border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.2)] dark:shadow-[0_0_20px_rgba(234,179,8,0.3)] animate-pulse transition-colors">
-            <span class="text-4xl">👑</span>
+    <div class="bg-white dark:bg-primary/10 border-2 border-primary/20 dark:border-primary/40 p-3 md:p-10 rounded-2xl md:rounded-[40px] text-center order-2 scale-110 md:scale-105 shadow-xl dark:shadow-2xl shadow-primary/10 dark:shadow-primary/20 relative group hover:-translate-y-3 transition-all duration-500 z-10 flex flex-col justify-end">
+        <div class="absolute -top-3 md:-top-6 left-1/2 -translate-x-1/2 bg-primary text-white text-[6px] md:text-[10px] font-black px-2 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg tracking-widest">1ST</div>
+        <div class="w-12 h-12 md:w-24 md:h-24 bg-yellow-50 dark:bg-yellow-500/20 rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center border-2 md:border-4 border-yellow-400 dark:border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.2)] dark:shadow-[0_0_20px_rgba(234,179,8,0.3)] animate-pulse transition-colors mt-3 md:mt-0">
+            <span class="text-xl md:text-4xl">👑</span>
         </div>
-        <h3 class="font-black text-2xl text-slate-900 dark:text-white transition-colors">Mulyono</h3>
-        <p class="text-xs text-slate-500 dark:text-gray-400 mt-1 transition-colors">Teknik Informatika</p>
-        <p class="text-primary font-black mt-4 text-3xl">180 <span class="text-xs font-normal text-slate-400 dark:text-gray-400 italic transition-colors">pts</span></p>
+        <h3 class="font-black text-[11px] md:text-2xl text-slate-900 dark:text-white truncate transition-colors">Mulyono</h3>
+        <p class="text-[7px] md:text-xs text-slate-500 dark:text-gray-400 mt-0.5 md:mt-1 truncate transition-colors">T. Informatika</p>
+        <p class="text-primary font-black mt-2 md:mt-4 text-sm md:text-3xl">180 <span class="text-[7px] md:text-xs font-normal text-slate-400 dark:text-gray-400 italic transition-colors">pts</span></p>
     </div>
 
     <!-- Rank 3 -->
-    <div class="bg-white dark:bg-card/40 border border-slate-200 dark:border-white/5 p-6 rounded-3xl text-center order-3 relative group hover:-translate-y-2 transition-all duration-500 shadow-sm dark:shadow-none">
-        <div class="absolute top-4 left-4 text-orange-600 dark:text-orange-700 font-black text-xl italic transition-colors">3</div>
-        <div class="w-16 h-16 bg-orange-50 dark:bg-orange-700/20 rounded-full mx-auto mb-4 flex items-center justify-center border-2 border-orange-200 dark:border-orange-700/50 shadow-sm dark:shadow-lg transition-colors">
-            <span class="text-2xl">🥉</span>
+    <div class="bg-white dark:bg-card/40 border border-slate-200 dark:border-white/5 p-2 md:p-6 rounded-2xl md:rounded-3xl text-center order-3 relative group hover:-translate-y-2 transition-all duration-500 shadow-sm dark:shadow-none flex flex-col justify-end">
+        <div class="absolute top-2 left-2 md:top-4 md:left-4 text-orange-600 dark:text-orange-700 font-black text-xs md:text-xl italic transition-colors">3</div>
+        <div class="w-10 h-10 md:w-16 md:h-16 bg-orange-50 dark:bg-orange-700/20 rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center border-2 border-orange-200 dark:border-orange-700/50 shadow-sm md:shadow-lg transition-colors mt-4 md:mt-0">
+            <span class="text-base md:text-2xl">🥉</span>
         </div>
-        <h3 class="font-bold text-slate-900 dark:text-white transition-colors">Siti Aminah</h3>
-        <p class="text-xs text-slate-500 dark:text-gray-500 mt-1 transition-colors">Teknik Informatika</p>
-        <p class="text-primary font-bold mt-3 text-xl">130 <span class="text-xs font-normal text-slate-400 dark:text-gray-500 transition-colors">pts</span></p>
+        <h3 class="font-bold text-slate-900 dark:text-white text-[9px] md:text-base truncate transition-colors">Siti Aminah</h3>
+        <p class="text-[7px] md:text-xs text-slate-500 dark:text-gray-500 mt-0.5 md:mt-1 truncate transition-colors">T. Informatika</p>
+        <p class="text-primary font-bold mt-2 md:mt-3 text-xs md:text-xl">130 <span class="text-[7px] md:text-xs font-normal text-slate-400 dark:text-gray-500 transition-colors">pts</span></p>
     </div>
 </div>
 
